@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "org.FarAwayCraft.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"FarAwayCraftMixin",
+		"A"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

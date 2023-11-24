@@ -1,0 +1,22 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2023-11-23 02:16:15 +0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2023-11-23 02:16:14 +0500"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:snowy_taiga": "2023-11-23 02:16:22 +0500",
+      "minecraft:frozen_ocean": "2023-11-23 02:16:16 +0500"
+    },
+    "done": false
+  },
+  "DataVersion": 3337
+}
