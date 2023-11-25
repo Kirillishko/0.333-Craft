@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.FarAwayCraft.effects.Effects;
+import org.FarAwayCraft.effects.EffectsLoader;
 
 public class FarAwayCraft implements ModInitializer {
 	public static final String MOD_ID = "farawaycraft";
@@ -12,7 +12,7 @@ public class FarAwayCraft implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		Effects.registerEffects();
+		EffectsLoader.registerEffects();
 		LOGGER.info("Hello Fabric world!");
 	}
 }

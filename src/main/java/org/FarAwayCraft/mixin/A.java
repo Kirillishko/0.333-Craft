@@ -1,19 +1,13 @@
 package org.FarAwayCraft.mixin;
 
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.MinecraftServer;
 import org.FarAwayCraft.FarAwayCraft;
-import org.FarAwayCraft.effects.Effects;
-import org.FarAwayCraft.effects.PenetrationStatusEffect;
+import org.FarAwayCraft.effects.EffectsLoader;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -27,10 +21,6 @@ import static java.lang.Math.min;
 @Mixin(PlayerEntity.class)
 //@Mixin(LivingEntity.class)
 public class A {
-//    @Inject(at = @At("HEAD"), method = "onDamaged")
-//    private void onDamaged(DamageSource damageSource) {
-//        damageSource.
-//    }
     @Inject(at = @At("HEAD"), method = "attack")
     private void attackThroughArmor(Entity target, CallbackInfo info) {
         var player = (PlayerEntity) (Object) this;
@@ -39,7 +29,7 @@ public class A {
         FarAwayCraft.LOGGER.warn("DEBUG player.hasStatusEffect(penetration): " + player.hasStatusEffect(StatusEffects.SPEED));
         FarAwayCraft.LOGGER.warn("DEBUG isEnemy: " + isEnemy);
 
-        if (player.hasStatusEffect(Effects.Penetration) && target instanceof LivingEntity enemy) {
+        if (player.hasStatusEffect(EffectsLoader.Penetration) && target instanceof LivingEntity enemy) {
             FarAwayCraft.LOGGER.warn("DEBUG target: " + target.getEntityName());
             var health = enemy.getHealth();
             var a = player.getInventory().getMainHandStack();
@@ -57,11 +47,6 @@ public class A {
                     break;
                 }
             }
-
-//            FarAwayCraft.LOGGER.warn("DEBUG g: " + String.valueOf(g));
-//            var damageInHand = (float) player.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE) + (float) b.get(EntityAttributes.GENERIC_ATTACK_DAMAGE).;
-//            FarAwayCraft.LOGGER.warn(String.valueOf(player.getInventory().selectedSlot));
-//            player.getInventory().offHand.forEach(value -> FarAwayCraft.LOGGER.warn(value.getTranslationKey()));
 
             FarAwayCraft.LOGGER.warn("DEBUG health: " + health);
             FarAwayCraft.LOGGER.warn("DEBUG damageInHand: " + damageInHand);
