@@ -6,7 +6,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.FarAwayCraft.FarAwayCraft;
 
-public class Effects {
+public class EffectsLoader {
 
     public static final StatusEffect Penetration = new PenetrationStatusEffect();
 
