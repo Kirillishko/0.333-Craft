@@ -10,12 +10,6 @@ public class PenetrationStatusEffect extends StatusEffect {
     }
 
     @Override
-    public boolean canApplyUpdateEffect(int duration, int amplifier) {
-        // In our case, we just make it return true so that it applies the status effect every tick.
-        return true;
-    }
-
-    @Override
     public String toString() {
         return "penetration";
     }

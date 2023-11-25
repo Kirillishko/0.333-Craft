@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PlayerEntity.class)
-public class ImmobilizationEffectMixin {
+public class PlayerEntityMixin {
     @Inject(method="getMovementSpeed", at=@At("HEAD"), cancellable = true)
     public void getMovementSpeed0(CallbackInfoReturnable<Float> cir) {
         var player = (PlayerEntity) (Object) this;
